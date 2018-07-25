@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
   //Open the UDP socket
   UDP *udp;
   try {
-    udp = new UDP(14560,100);
+    udp = new UDP(recvport,100);
   } catch(...) {
     std::cerr << "Unable to open UDP port" << std::endl;
     return -1;
