@@ -11,6 +11,7 @@ NOTE: This code has only been built/tested on OS X and Ubuntu 16.04.
 
 ## Building
 
+    $ git submodule update --init --recursive
     $ mkdir build
     $ cd build
     $ cmake ..
