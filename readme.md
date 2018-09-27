@@ -24,3 +24,9 @@ NOTE: This code has only been built/tested on OS X and Ubuntu 16.04.
 An optional argument will specify the port to listen on, e.g.:
 
     $ ./bin/decode_example 12345
+
+To send an example STATEINFO message (argument specifices the local port to send to):
+
+    $ ./bin/encode_example 12345
+
+NOTE: you can run the `decode_example` in the background listening to the same port which the `encode_example` sends.  The `decode_example` will spit out a subset of the variables in the `STATEINFO` message.

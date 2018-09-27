@@ -7,6 +7,7 @@ class UDP {
     ~UDP() { close(fd); };
 
     int Read(char buf[], const int maxlen);
+    int Write(const char buf[], const int len, const std::string addr, const int port);
   private:
     int fd;
 

@@ -87,6 +87,18 @@ int main(int argc, char *argv[]) {
         << "] [" <<  n_msg.roll << "," << n_msg.pitch << "," << n_msg.yaw
         << "]" << std::endl;
     }
+
+    //STATEINFO message
+    if(msg.msgid == MAVLINK_MSG_ID_PLANCK_STATEINFO) {
+
+      mavlink_planck_stateinfo_t s_msg;
+      mavlink_msg_planck_stateinfo_decode(&msg, &s_msg);
+
+      std::cout << "STATEINFO: " <<  s_msg.time_usec
+        << ": [" << s_msg.vn << "," << s_msg.ve << "," << s_msg.ve
+        << "] [" <<  s_msg.roll << "," << s_msg.pitch << "," << s_msg.yaw
+        << "]" << std::endl;
+    }
   }
 
   //Shutdown

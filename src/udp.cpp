@@ -63,3 +63,22 @@ bool UDP::bind_socket(const int listen_port, const int timeoutmsec)
 
   return true;
 }
+
+int UDP::Write(const char buf[], const int len, const std::string address, const int port)
+{
+  struct sockaddr_in addr;
+  addr.sin_family = AF_INET;
+  addr.sin_port = htons(port);
+  if(inet_pton(AF_INET, address.c_str(), &addr.sin_addr) == 0)
+  {
+    std::cerr << "Could not translate remote IP address string to in_addr: " << address << std::endl;
+    return -1;
+  }
+  int socklen = sizeof(addr);
+  int nret = sendto(fd, buf, len, 0, (const sockaddr*)&addr, socklen);
+  if(nret < len)
+  {
+    std::cerr << "Unable to send all data to UDP endpoint." << std::endl;
+  }
+  return nret;
+}
