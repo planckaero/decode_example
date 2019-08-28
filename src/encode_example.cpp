@@ -29,11 +29,15 @@ int main(int argc, char *argv[]) {
     PLANCK_SYS_ID,                          //Target system ID
     PLANCK_CTRL_COMP_ID,                    //Target component ID
     9876554321,                             //time_usec
+    98765543212,                            //time_unix_usec
     3,                                      //mode
     0x03,                                   //status
     0.2,                                    //roll
     -0.1,                                   //pitch
     0.01,                                   //yaw
+    0.2,                                    //gyro_x
+    -0.1,                                   //gyro_y
+    0.01,                                   //gyro_z
     1.01,                                   //xacc (North acceleration)
     2.01,                                   //yacc (East acceleration)
     3.01,                                   //zacc (Down acceleartion)
@@ -41,6 +45,7 @@ int main(int argc, char *argv[]) {
     -1171345678,                            //longitude (deg * 1e7)
     3000,                                   //altitude (mm MSL)
     0,                                      //altitude above launch (mm)
+    0,                                      //altitude above terrain (mm)
     0.1,                                    //Velocity north
     0.2,                                    //Velocity east
     0.3                                     //Velocity down

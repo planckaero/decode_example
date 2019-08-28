@@ -62,11 +62,11 @@ int main(int argc, char *argv[]) {
       continue;
 
     //Determine the message type
-    if(msg.msgid == MAVLINK_MSG_ID_PLANCK_LANDING_TAG_STATE_BODY) {
+    if(msg.msgid == MAVLINK_MSG_ID_PLANCK_LANDING_TAG_MEASUREMENT_BODY) {
 
       //Decode the message
-      mavlink_planck_landing_tag_state_body_t b_msg;
-      mavlink_msg_planck_landing_tag_state_body_decode(&msg, &b_msg);
+      mavlink_planck_landing_tag_measurement_body_t b_msg;
+      mavlink_msg_planck_landing_tag_measurement_body_decode(&msg, &b_msg);
 
       //Access specific members of this message type
       std::cout << "BODY: " << b_msg.age
@@ -76,10 +76,10 @@ int main(int argc, char *argv[]) {
     }
 
     //Different message
-    if(msg.msgid == MAVLINK_MSG_ID_PLANCK_LANDING_TAG_STATE_NED) {
+    if(msg.msgid == MAVLINK_MSG_ID_PLANCK_LANDING_TAG_ESTIMATE_NED) {
 
-      mavlink_planck_landing_tag_state_ned_t n_msg;
-      mavlink_msg_planck_landing_tag_state_ned_decode(&msg, &n_msg);
+      mavlink_planck_landing_tag_estimate_ned_t n_msg;
+      mavlink_msg_planck_landing_tag_estimate_ned_decode(&msg, &n_msg);
 
       std::cout << "NED: " <<  n_msg.age
         << " [" << n_msg.x << "," << n_msg.y << "," << n_msg.z
