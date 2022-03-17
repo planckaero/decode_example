@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
       1,                                      //"From" system ID    (1 is AP)
       1,                                      //"From" component ID (1 is AP)
       &msg,                                   //Message to write to
-      PLANCK_SYS_ID,                          //Target system ID
+      1,                                      //Target system ID
       PLANCK_CTRL_COMP_ID,                    //Target component ID
       boot_us,                                //time_usec
       unix_us,                                //time_unix_usec
