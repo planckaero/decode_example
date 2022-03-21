@@ -30,3 +30,17 @@ To send an example STATEINFO message (argument specifices the ip/port to send to
     $ ./bin/encode_example 127.0.0.1 12345
 
 NOTE: you can run the `decode_example` in the background listening to the same port which the `encode_example` sends.  The `decode_example` will spit out a subset of the variables in the `STATEINFO` message.
+
+## Docker
+A Docker implementation is available as well. To build:
+
+    $ ./docker/build_image.sh
+
+To run, two scripts are provided:
+
+    $ ./docker/run_listener.sh
+
+and
+
+   $ ./docker/run_sender.sh
+

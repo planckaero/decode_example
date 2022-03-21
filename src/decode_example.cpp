@@ -1,6 +1,7 @@
 #include <iostream>
 #include "mavlink.h"
 #include "udp.h"
+#include <signal.h>
 
 //To nicely shutdown
 bool stop = false;
@@ -29,6 +30,8 @@ bool to_mavlink_message(const uint8_t *buf,
 
 //Main loop
 int main(int argc, char *argv[]) {
+
+  signal(SIGINT, sigIntHandler);  //Handle ctrl+c
 
   //Handle first argument as a port.  No error checking done.
   int recvport = 14560;
