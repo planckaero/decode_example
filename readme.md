@@ -42,5 +42,5 @@ To run, two scripts are provided:
 
 and
 
-   $ ./docker/run_sender.sh
+    $ ./docker/run_sender.sh
 
